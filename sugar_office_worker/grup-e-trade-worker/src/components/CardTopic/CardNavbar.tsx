@@ -7,7 +7,7 @@ const CardNavbar = () => {
   return (
     <>
       <div
-        className="Card-Menu p-2 h-12 flex items-center justify-around w-full grid grid-cols-2 grid-rows-1 grid-gap-4 gap-32 bg-sky-200 "
+        className="Card-Menu p-2 h-12 flex border-b-2 border-pink-500 items-center justify-around w-full grid grid-cols-2 grid-rows-1 grid-gap-4 gap-32 bg-sky-200 "
         // style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }}
       >
         <CardLeftMenu/>
