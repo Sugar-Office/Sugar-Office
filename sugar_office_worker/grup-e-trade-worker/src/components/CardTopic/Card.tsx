@@ -1,6 +1,7 @@
 import React from "react";
 import CardMain from "./CardMain";
 import CardNavbar from "./CardNavbar";
+import CardPagination from "./CardPagination";
 // import Denemeler from "./Denemeler";
 
 
@@ -13,6 +14,7 @@ const Card = () => {
     > 
       <CardNavbar />
      <CardMain />
+     <CardPagination/>
       {/* <Denemeler/> */}
     </div>
   );
