@@ -1,4 +1,5 @@
- // --------JavaScript ile açılır menüyü kontrol etmek için ---------
+ //******** JavaScript ile açılır menüyü kontrol etmek için ********
+
  document.addEventListener('DOMContentLoaded', function () {
     const languageButton = document.querySelector('.relative:nth-child(1) button');
     const languageMenu = document.querySelector('.relative:nth-child(1) .absolute');
@@ -7,7 +8,8 @@
         languageMenu.classList.toggle('hidden');
     });
 
-    //------ Dışarı tıklandığında dil menüsünü kapat ---------
+    //******* Dışarı tıklandığında dil menüsünü kapat *******
+
     document.addEventListener('click', function (event) {
         if (!languageButton.contains(event.target)) {
             languageMenu.classList.add('hidden');
@@ -21,7 +23,7 @@
         currencyMenu.classList.toggle('hidden');
     });
 
-    //- ------ Dışarı tıklandığında para birimi menüsünü kapat ---------
+    //********   Dışarı tıklandığında para birimi menüsünü kapat *******
     document.addEventListener('click', function (event) {
         if (!currencyButton.contains(event.target)) {
             currencyMenu.classList.add('hidden');
@@ -29,7 +31,7 @@
     });
 });
 
-//------- Group Multilevel button -------- 
+//*******  Group Multilevel button ********
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -69,12 +71,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Doküman seviyesinde bir tıklama olayı ekle
-    document.addEventListener('click', function (event) {
-        // Tıklanan öğenin bir düğme olup olmadığını kontrol et
-        const isButtonClick = event.target.tagName === 'BUTTON';
+    //*------ Doküman seviyesinde bir tıklama olayı ekle
+
+ document.addEventListener('click', function (event) {
+
+        //  Tıklanan öğenin bir düğme olup olmadığını kontrol et
+ const isButtonClick = event.target.tagName === 'BUTTON';
+
         // Tıklanan öğenin bir bağlantı olup olmadığını kontrol et
-        const isLinkClick = event.target.tagName === 'A';
+const isLinkClick = event.target.tagName === 'A';
         
         // Eğer tıklanan öğe hem düğme hem de bağlantı değilse
         if (!isButtonClick && !isLinkClick) {
@@ -87,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
- //------ Sepet -------
+ //******  Sepet *******
 
  document.addEventListener("DOMContentLoaded", function () {
     // Genel değişkenler
@@ -128,9 +133,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-//----- Initialize Slick Carousel -----
+//****** Initialize Slick Carousel *******
 
+// $(document).ready(function(){
+//     $('.slick-carousel').slick({
+//         autoplay: true,
+//         autoplaySpeed: 3000,
+//         dots: true,
+//         prevArrow: '<button type="button" class="slick-prev">&#8249;</button>',
+//         nextArrow: '<button type="button" class="slick-next">&#8250;</button>',
+//     });
+// });
+// $(document).ready(function () {
+// $('#carouselExampleSlidesOnly').slick();
+// });
+
+// function prevSlide() {
+// $('#carouselExampleSlidesOnly').slick('slickPrev');
+// }
+
+// function nextSlide() {
+// $('#carouselExampleSlidesOnly').slick('slickNext');
+// }
 $(document).ready(function(){
+    // Tek bir document ready kullanın
     $('.slick-carousel').slick({
         autoplay: true,
         autoplaySpeed: 3000,
@@ -138,20 +164,22 @@ $(document).ready(function(){
         prevArrow: '<button type="button" class="slick-prev">&#8249;</button>',
         nextArrow: '<button type="button" class="slick-next">&#8250;</button>',
     });
-});
-$(document).ready(function () {
-$('#carouselExampleSlidesOnly').slick();
+
+    // Slick Carousel'ı başlatırken gerekli seçicilerinizi kullanın
+    $('#carouselExampleSlidesOnly').slick();
 });
 
+// Slick Carousel'ı kullanmak için ayrı ayrı fonksiyonlar
 function prevSlide() {
-$('#carouselExampleSlidesOnly').slick('slickPrev');
+    $('#carouselExampleSlidesOnly').slick('slickPrev');
 }
 
 function nextSlide() {
-$('#carouselExampleSlidesOnly').slick('slickNext');
+    $('#carouselExampleSlidesOnly').slick('slickNext');
 }
 
- //---  Modul-7 ----
+
+ //******  Modul-7 ******
 
  function nextSlide() {
     document.getElementById('slider-1').style.display = 'none';
@@ -164,31 +192,46 @@ $('#carouselExampleSlidesOnly').slick('slickNext');
   }
 
 
- //------- modul-20-----
+ //******  modul-20 ******
 
-// Carousel kontrol fonksiyonları
-function prevItem() {
-    showItem(currentItem - 1);
+ //--- deals Swiper --
+
+   document.addEventListener('DOMContentLoaded', function () {
+     const swiper = new Swiper('.mySwiper1', {
+       navigation: { 
+       nextEl: "#next-1",
+           prevEl: "#prev-1",
+         },   
+     });
+   });
+
+   //--- featured Swiper --
+
+   const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 4,
+    
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    
+  });
+
+  //**** modul-21 ****/
+  function showButtons(element) {
+    const buttons = element.querySelector('.txt-button-group');
+    const ratPri = element.querySelector('.rat-pri');
+
+    buttons.style.display = 'flex';
+    ratPri.style.display = 'none';
   }
 
-  function nextItem() {
-    showItem(currentItem + 1);
+  function hideButtons(element) {
+    const buttons = element.querySelector('.txt-button-group');
+    const ratPri = element.querySelector('.rat-pri');
+
+    buttons.style.display = 'none';
+    ratPri.style.display = 'block';
   }
 
-  // Görüntülenen öğe sayısını takip etmek için değişken
-  var currentItem = 1;
-
-  // Öğeleri gösteren fonksiyon
-  function showItem(n) {
-    var items = document.querySelectorAll('[data-carousel-item]');
-    if (n > items.length) {
-      currentItem = 1;
-    }
-    if (n < 1) {
-      currentItem = items.length;
-    }
-    for (var i = 0; i < items.length; i++) {
-      items[i].style.display = 'none';
-    }
-    items[currentItem - 1].style.display = 'flex';
-  }
